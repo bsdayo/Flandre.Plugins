@@ -18,7 +18,7 @@ public class HttpCatPlugin : Plugin
     }
 
     [Command("httpcat <code:int>")]
-    public async Task<MessageContent> OnHttpCat(MessageContext ctx, ParsedArgs args)
+    public async Task<MessageContent> OnHttpCat(MessageContext _, ParsedArgs args)
     {
         try
         {

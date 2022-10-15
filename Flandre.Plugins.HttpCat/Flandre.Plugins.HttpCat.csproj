@@ -1,21 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Product>Flandre.Plugins.HttpCat</Product>
+        <Title>$(Product)</Title>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Version>$(PackageVersion)</Version>
+        <Authors>b1acksoil</Authors>
+        <Description>HttpCat plugin for Flandre.</Description>
+        <PackageTags>bot</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PackageVersion>1.0.0</PackageVersion>
-        <Version>$(PackageVersion)</Version>
-        <Product>Flandre.Plugins.HttpCat</Product>
-        <Title>Flandre.Plugins.HttpCat</Title>
-        <Authors>b1acksoil</Authors>
-        <Description>HttpCat plugin for Flandre.</Description>
-        <Copyright>b1acksoil (C) 2022-present</Copyright>
+        
         <PackageProjectUrl>https://github.com/b1acksoil/Flandre.Plugins.HttpCat</PackageProjectUrl>
         <RepositoryUrl>https://github.com/b1acksoil/Flandre.Plugins.HttpCat.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageTags>bot</PackageTags>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Copyright>b1acksoil (C) 2022-present</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
