@@ -1,9 +1,15 @@
-﻿## Flandre.Plugins.HttpCat
+﻿<div align="center">
 
-[http.cat](https://github.com/httpcats/http.cat/) Plugin for Flandre.
+## Flandre.Plugins
 
-### Usage
+一些 [Flandre](https://github.com/FlandreDevs/Flandre) 的自用插件
 
-```
-httpcat <code:int>
-```
+</div>
+
+### 插件列表
+
+- [HttpCat](src/Flandre.Plugins.HttpCat/README.md) - [http.cat](https://github.com/httpcats/http.cat/) 图片获取
+
+### 开源协议
+
+本仓库内的所有插件遵循 MIT 协议开源。

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.HttpCat", "Flandre.Plugins.HttpCat\Flandre.Plugins.HttpCat.csproj", "{401954F2-A12F-4F43-945B-21556FF0BF18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.HttpCat", "src\Flandre.Plugins.HttpCat\Flandre.Plugins.HttpCat.csproj", "{401954F2-A12F-4F43-945B-21556FF0BF18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
