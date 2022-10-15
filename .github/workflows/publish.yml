@@ -26,7 +26,6 @@ jobs:
           PACKAGE_NAME: Flandre.Plugins.HttpCat
           VERSION_FILE_PATH: src/Flandre.Plugins.HttpCat/Flandre.Plugins.HttpCat.csproj
           VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
-          TAG_COMMIT: true
-          TAG_FORMAT: v*
+          TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           INCLUDE_SYMBOLS: false
