@@ -3,7 +3,7 @@
     <PropertyGroup>
         <Product>Flandre.Plugins.HttpCat</Product>
         <Title>$(Product)</Title>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.1.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>HttpCat plugin for Flandre.</Description>
