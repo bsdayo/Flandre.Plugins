@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.HttpCat", "src\Flandre.Plugins.HttpCat\Flandre.Plugins.HttpCat.csproj", "{401954F2-A12F-4F43-945B-21556FF0BF18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.WolframAlpha", "src\Flandre.Plugins.WolframAlpha\Flandre.Plugins.WolframAlpha.csproj", "{ACEADF94-7EF0-4881-9191-85076C5DDC10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{401954F2-A12F-4F43-945B-21556FF0BF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401954F2-A12F-4F43-945B-21556FF0BF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401954F2-A12F-4F43-945B-21556FF0BF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

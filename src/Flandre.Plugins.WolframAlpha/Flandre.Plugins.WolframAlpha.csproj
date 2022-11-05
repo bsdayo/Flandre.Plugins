@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Product>Flandre.Plugins.HttpCat</Product>
+        <Product>Flandre.Plugins.WolframAlpha</Product>
         <Title>$(Product)</Title>
         <PackageVersion>1.0.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
-        <Description>HttpCat plugin for Flandre.</Description>
+        <Description>Wolfram Alpha non-commercial API plugin for Flandre.</Description>
         <PackageTags>bot</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        
+
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        
+
         <PackageProjectUrl>https://github.com/b1acksoil/Flandre.Plugins</PackageProjectUrl>
         <RepositoryUrl>https://github.com/b1acksoil/Flandre.Plugins.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -22,6 +22,8 @@
 
     <ItemGroup>
       <PackageReference Include="Flandre.Core" Version="0.5.0" />
+      <PackageReference Include="Genbox.WolframAlpha" Version="3.0.0-alpha3" />
+      <PackageReference Include="SkiaSharp" Version="2.88.3" />
     </ItemGroup>
 
 </Project>

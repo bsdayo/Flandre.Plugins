@@ -28,4 +28,14 @@ jobs:
           VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
           TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-          INCLUDE_SYMBOLS: false
+          
+      - name: Publish WolframAlpha
+        id: publish-wolframalpha
+        uses: alirezanet/publish-nuget@v3.0.4
+        with:
+          PROJECT_FILE_PATH: src/Flandre.Plugins.WolframAlpha/Flandre.Plugins.WolframAlpha.csproj
+          PACKAGE_NAME: Flandre.Plugins.WolframAlpha
+          VERSION_FILE_PATH: src/Flandre.Plugins.WolframAlpha/Flandre.Plugins.WolframAlpha.csproj
+          VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
+          TAG_COMMIT: false
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
