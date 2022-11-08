@@ -3,7 +3,7 @@
     <PropertyGroup>
         <Product>Flandre.Plugins.BaiduTranslate</Product>
         <Title>$(Product)</Title>
-        <PackageVersion>1.0.0-alpha</PackageVersion>
+        <PackageVersion>1.0.0-beta</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>Baidu Translate plugin for Flandre.</Description>

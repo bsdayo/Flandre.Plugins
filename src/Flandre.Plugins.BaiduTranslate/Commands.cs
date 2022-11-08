@@ -12,11 +12,12 @@ public partial class BaiduTranslatePlugin
     [Command("trans <text:text>")]
     [Option("source", "-s [source: string = auto]")]
     [Option("target", "-t [target: string = zh]")]
+    [Shortcut("翻译")]
     public async Task<MessageContent> OnTrans(MessageContext ctx, ParsedArgs args)
     {
         var text = args.GetArgument<string>("text");
-        var source = BaiduTranslateUtils.GetLangCode(args.GetArgument<string>("source"));
-        var target = BaiduTranslateUtils.GetLangCode(args.GetArgument<string>("target"));
+        var source = BaiduTranslateUtils.GetLangCode(args.GetOption<string>("source"));
+        var target = BaiduTranslateUtils.GetLangCode(args.GetOption<string>("target"));
 
         try
         {
