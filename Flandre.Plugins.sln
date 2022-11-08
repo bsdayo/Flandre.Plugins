@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.HttpCat", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.WolframAlpha", "src\Flandre.Plugins.WolframAlpha\Flandre.Plugins.WolframAlpha.csproj", "{ACEADF94-7EF0-4881-9191-85076C5DDC10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.DeepL", "src\Flandre.Plugins.DeepL\Flandre.Plugins.DeepL.csproj", "{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACEADF94-7EF0-4881-9191-85076C5DDC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
