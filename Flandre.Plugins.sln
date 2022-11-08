@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.WolframAlph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.DeepL", "src\Flandre.Plugins.DeepL\Flandre.Plugins.DeepL.csproj", "{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flandre.Plugins.BaiduTranslate", "src\Flandre.Plugins.BaiduTranslate\Flandre.Plugins.BaiduTranslate.csproj", "{26761612-DD3D-4E1A-9D76-7A564307A8D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC638A7A-A8F7-471B-BBE5-65FD3DDAD8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26761612-DD3D-4E1A-9D76-7A564307A8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26761612-DD3D-4E1A-9D76-7A564307A8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26761612-DD3D-4E1A-9D76-7A564307A8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26761612-DD3D-4E1A-9D76-7A564307A8D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
