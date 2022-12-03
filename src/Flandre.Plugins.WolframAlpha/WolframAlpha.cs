@@ -1,18 +1,21 @@
-﻿using Flandre.Core.Attributes;
-using Flandre.Core.Common;
-using Flandre.Core.Messaging;
+﻿using Flandre.Core.Messaging;
+using Flandre.Framework.Attributes;
+using Flandre.Framework.Common;
 using Genbox.WolframAlpha;
+using Microsoft.Extensions.Logging;
 
 namespace Flandre.Plugins.WolframAlpha;
 
-[Plugin("WolframAlpha")]
-public class WolframAlphaPlugin : Plugin
+public sealed class WolframAlphaPlugin : Plugin
 {
-    private readonly WolframAlphaConfig _config;
+    private readonly WolframAlphaPluginConfig _config;
 
-    public WolframAlphaPlugin(WolframAlphaConfig config)
+    private readonly ILogger<WolframAlphaPlugin> _logger;
+
+    public WolframAlphaPlugin(WolframAlphaPluginConfig config, ILogger<WolframAlphaPlugin> logger)
     {
         _config = config;
+        _logger = logger;
     }
 
     [Command("wa <query:string>")]
@@ -22,15 +25,15 @@ public class WolframAlphaPlugin : Plugin
 
         var results = await client.FullResultAsync(args.GetArgument<string>("query"));
 
-        Logger.Debug("Searching Timing: " + results.Timing);
+        _logger.LogDebug("Searching Time: {SearchingTime}", results.Timing);
 
-        var image = await WolframAlphaImageGenerator.Generate(results, _config.FontPath, Logger);
+        var image = await WolframAlphaImageGenerator.Generate(results, _config.FontPath, _logger);
 
         return new MessageBuilder().Image(image);
     }
 }
 
-public class WolframAlphaConfig
+public sealed class WolframAlphaPluginConfig
 {
     public string AppId { get; set; } = string.Empty;
 

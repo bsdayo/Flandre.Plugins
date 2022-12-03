@@ -1,11 +1,13 @@
-﻿using Flandre.Core;
+﻿using Flandre.Framework;
 
 namespace Flandre.Plugins.HttpCat;
 
-public static class FlandreAppExtensions
+public static class HttpCatPluginExtensions
 {
-    public static FlandreApp UseHttpCatPlugin(this FlandreApp app, HttpCatPluginConfig? config = null)
+    public static FlandreAppBuilder UseHttpCatPlugin(this FlandreAppBuilder builder,
+        HttpCatPluginConfig? config = null)
     {
-        return app.Use(new HttpCatPlugin(config));
+        return builder.UsePlugin<HttpCatPlugin, HttpCatPluginConfig>(
+            config ?? new HttpCatPluginConfig());
     }
 }

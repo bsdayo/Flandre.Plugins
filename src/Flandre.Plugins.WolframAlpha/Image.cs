@@ -1,12 +1,12 @@
-﻿using Flandre.Core.Utils;
-using Genbox.WolframAlpha.Responses;
+﻿using Genbox.WolframAlpha.Responses;
+using Microsoft.Extensions.Logging;
 using SkiaSharp;
 
 namespace Flandre.Plugins.WolframAlpha;
 
 internal class WolframAlphaImageGenerator
 {
-    internal static async Task<byte[]> Generate(FullResultResponse result, string fontPath, Logger logger)
+    internal static async Task<byte[]> Generate(FullResultResponse result, string fontPath, ILogger logger)
     {
         return await Task.Run(() =>
         {
@@ -25,7 +25,7 @@ internal class WolframAlphaImageGenerator
                     {
                         var image = new HttpClient().GetByteArrayAsync(subPod.Image.Src).Result;
                         images[y] = image;
-                        logger.Debug($"Downloaded image: {subPod.Image.Src}");
+                        logger.LogDebug("Downloaded image: {ImageUrl}", subPod.Image.Src);
                     });
                     imageTasks.Add(task);
 

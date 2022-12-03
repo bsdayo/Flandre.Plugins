@@ -1,9 +1,10 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using Flandre.Core.Attributes;
-using Flandre.Core.Common;
 using Flandre.Core.Messaging;
+using Flandre.Framework.Attributes;
+using Flandre.Framework.Common;
+using Microsoft.Extensions.Logging;
 
 namespace Flandre.Plugins.BaiduTranslate;
 
@@ -64,7 +65,7 @@ public partial class BaiduTranslatePlugin
                     "90107" => "API 认证失败，请联系开发者。",
                     _ => "未知错误。"
                 };
-                Logger.Error(errorMessage);
+                _logger.LogError("API 请求发生错误: {ErrorMessage}", errorMessage);
                 return errorMessage;
             }
 
@@ -75,7 +76,7 @@ public partial class BaiduTranslatePlugin
         }
         catch (Exception e)
         {
-            Logger.Error(e);
+            _logger.LogError(e, "发生错误。");
             return $"发生错误：{e.Message}";
         }
     }

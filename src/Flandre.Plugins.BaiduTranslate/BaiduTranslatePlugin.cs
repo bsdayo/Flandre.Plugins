@@ -1,20 +1,22 @@
-﻿using Flandre.Core.Attributes;
-using Flandre.Core.Common;
+﻿using Flandre.Framework.Common;
+using Microsoft.Extensions.Logging;
 
 namespace Flandre.Plugins.BaiduTranslate;
 
-[Plugin("BaiduTranslate")]
-public partial class BaiduTranslatePlugin : Plugin
+public sealed partial class BaiduTranslatePlugin : Plugin
 {
     private readonly BaiduTranslatePluginConfig _config;
-    
-    public BaiduTranslatePlugin(BaiduTranslatePluginConfig config)
+
+    private readonly ILogger<BaiduTranslatePlugin> _logger;
+
+    public BaiduTranslatePlugin(BaiduTranslatePluginConfig config, ILogger<BaiduTranslatePlugin> logger)
     {
         _config = config;
+        _logger = logger;
     }
 }
 
-public class BaiduTranslatePluginConfig
+public sealed class BaiduTranslatePluginConfig
 {
     public string AppId { get; set; } = string.Empty;
 

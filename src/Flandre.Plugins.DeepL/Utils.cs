@@ -36,7 +36,7 @@ internal static class DeepLUtils
         new[] { "瑞典语", "sv", LanguageCode.Swedish },
         new[] { "土耳其语", "tr", LanguageCode.Turkish },
         new[] { "乌克兰语", "uk", LanguageCode.Ukrainian },
-        new[] { "中文", "简体中文", "zh", "zh-cn", LanguageCode.Chinese },
+        new[] { "中文", "简体中文", "zh", "zh-cn", LanguageCode.Chinese }
     };
 
     internal static string GetLanguageName(string source)
