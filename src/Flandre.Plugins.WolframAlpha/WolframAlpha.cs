@@ -18,7 +18,7 @@ public sealed class WolframAlphaPlugin : Plugin
         _logger = logger;
     }
 
-    [Command("wa <query:string>")]
+    [Command("wa <query:text>")]
     public async Task<MessageContent> OnWolframAlpha(MessageContext _, ParsedArgs args)
     {
         var client = new WolframAlphaClient(_config.AppId);
