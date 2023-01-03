@@ -27,6 +27,9 @@ public sealed class WolframAlphaPlugin : Plugin
 
         _logger.LogDebug("Searching Time: {SearchingTime}", results.Timing);
 
+        if (!results.Pods.Any())
+            return "没有找到相关的内容。";
+
         var image = await WolframAlphaImageGenerator.Generate(results, _config.FontPath, _logger);
 
         return new MessageBuilder().Image(image);
