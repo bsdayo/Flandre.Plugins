@@ -2,8 +2,8 @@
 using Flandre.Framework.Attributes;
 using Flandre.Framework.Common;
 using Genbox.WolframAlpha;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Flandre.Plugins.WolframAlpha;
 
