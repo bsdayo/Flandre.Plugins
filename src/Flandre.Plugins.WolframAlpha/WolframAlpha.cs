@@ -12,9 +12,9 @@ public sealed class WolframAlphaPlugin : Plugin
 
     private readonly ILogger<WolframAlphaPlugin> _logger;
 
-    public WolframAlphaPlugin(WolframAlphaPluginOptions options, ILogger<WolframAlphaPlugin> logger)
+    public WolframAlphaPlugin(IOptionsSnapshot<WolframAlphaPluginOptions> options, ILogger<WolframAlphaPlugin> logger)
     {
-        _options = options;
+        _options = options.Value;
         _logger = logger;
     }
 

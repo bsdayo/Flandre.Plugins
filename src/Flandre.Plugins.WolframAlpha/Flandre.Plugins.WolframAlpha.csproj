@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <Title>Flandre.Plugins.WolframAlpha</Title>
-        <PackageVersion>2.3.0</PackageVersion>
+        <PackageVersion>2.3.1</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>Wolfram Alpha non-commercial API plugin for Flandre.</Description>
