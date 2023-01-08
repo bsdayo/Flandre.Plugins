@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Product>Flandre.Plugins.DeepL</Product>
-        <Title>$(Product)</Title>
-        <PackageVersion>2.0.0-alpha</PackageVersion>
+        <Title>Flandre.Plugins.DeepL</Title>
+        <PackageVersion>2.1.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>DeepL plugin for Flandre.</Description>
@@ -22,7 +21,7 @@
 
     <ItemGroup>
       <PackageReference Include="DeepL.net" Version="1.5.0" />
-      <PackageReference Include="Flandre.Framework" Version="0.7.1" />
+      <PackageReference Include="Flandre.Framework" Version="0.8.0-alpha.1" />
     </ItemGroup>
 
 </Project>

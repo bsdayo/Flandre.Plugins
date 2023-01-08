@@ -1,13 +1,21 @@
 ﻿using Flandre.Framework;
+using Microsoft.Extensions.Configuration;
 
 namespace Flandre.Plugins.DeepL;
 
 public static class DeepLPluginExtensions
 {
-    public static FlandreAppBuilder UseDeepLPlugin(this FlandreAppBuilder builder,
-        DeepLPluginConfig? config = null)
+    public static FlandreAppBuilder AddDeepLPlugin(this FlandreAppBuilder builder,
+        IConfiguration? configuration = null)
     {
-        return builder.UsePlugin<DeepLPlugin, DeepLPluginConfig>(
-            config ?? new DeepLPluginConfig());
+        return configuration is null
+            ? builder.AddPlugin<DeepLPlugin>()
+            : builder.AddPlugin<DeepLPlugin, DeepLPluginOptions>(configuration);
+    }
+
+    public static FlandreAppBuilder AddDeepLPlugin(this FlandreAppBuilder builder,
+        Action<DeepLPluginOptions> action)
+    {
+        return builder.AddPlugin<DeepLPlugin, DeepLPluginOptions>(action);
     }
 }

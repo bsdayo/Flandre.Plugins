@@ -28,7 +28,7 @@ public partial class BaiduTranslatePlugin
                 .PadLeft(10, '0');
             var sign = BitConverter.ToString(
                     MD5.Create().ComputeHash(Encoding.Default.GetBytes(
-                        _config.AppId + text + salt + _config.Token)))
+                        _options.AppId + text + salt + _options.Token)))
                 .Replace("-", "")
                 .ToLower();
 
@@ -37,7 +37,7 @@ public partial class BaiduTranslatePlugin
                 .Append($"?q={text}")
                 .Append($"&from={source}")
                 .Append($"&to={target}")
-                .Append($"&appid={_config.AppId}")
+                .Append($"&appid={_options.AppId}")
                 .Append($"&salt={salt}")
                 .Append($"&sign={sign}")
                 .ToString();

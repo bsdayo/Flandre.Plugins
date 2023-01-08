@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Product>Flandre.Plugins.BaiduTranslate</Product>
-        <Title>$(Product)</Title>
-        <PackageVersion>2.0.0</PackageVersion>
+        <Title>Flandre.Plugins.BaiduTranslate</Title>
+        <PackageVersion>2.1.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>Baidu Translate plugin for Flandre.</Description>
@@ -21,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Flandre.Framework" Version="0.7.1" />
+      <PackageReference Include="Flandre.Framework" Version="0.8.0-alpha.1" />
     </ItemGroup>
 
 </Project>

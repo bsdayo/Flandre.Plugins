@@ -1,6 +1,7 @@
 ﻿using DeepL;
 using Flandre.Framework.Common;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Flandre.Plugins.DeepL;
 
@@ -10,18 +11,18 @@ public sealed partial class DeepLPlugin : Plugin
 
     private readonly ILogger<DeepLPlugin> _logger;
 
-    public DeepLPlugin(DeepLPluginConfig config, ILogger<DeepLPlugin> logger)
+    public DeepLPlugin(IOptions<DeepLPluginOptions> options, ILogger<DeepLPlugin> logger)
     {
-        if (string.IsNullOrEmpty(config.AuthKey))
+        if (string.IsNullOrEmpty(options.Value.AuthKey))
             logger.LogWarning("DeepL 插件需要 Auth Key，请在插件配置中传入。");
 
-        _translator = new Translator(config.AuthKey,
-            new TranslatorOptions { MaximumNetworkRetries = config.MaximumNetworkRetries });
+        _translator = new Translator(options.Value.AuthKey,
+            new TranslatorOptions { MaximumNetworkRetries = options.Value.MaximumNetworkRetries });
         _logger = logger;
     }
 }
 
-public sealed class DeepLPluginConfig
+public sealed class DeepLPluginOptions
 {
     public string AuthKey { get; set; } = string.Empty;
 

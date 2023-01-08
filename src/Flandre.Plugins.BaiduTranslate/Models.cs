@@ -6,20 +6,27 @@ namespace Flandre.Plugins.BaiduTranslate;
 // ReSharper disable once UnusedAutoPropertyAccessor.Global
 internal sealed class BaiduTranslateResponse
 {
-    [JsonPropertyName("from")] public string From { get; set; }
+    [JsonPropertyName("from")]
+    public string From { get; set; }
 
-    [JsonPropertyName("to")] public string To { get; set; }
+    [JsonPropertyName("to")]
+    public string To { get; set; }
 
-    [JsonPropertyName("trans_result")] public BaiduTranslateResult[] Result { get; set; }
+    [JsonPropertyName("trans_result")]
+    public BaiduTranslateResult[] Result { get; set; }
 
-    [JsonPropertyName("error_code")] public string? ErrorCode { get; set; }
+    [JsonPropertyName("error_code")]
+    public string? ErrorCode { get; set; }
 
-    [JsonPropertyName("error_msg")] public string? ErrorMessage { get; set; }
+    [JsonPropertyName("error_msg")]
+    public string? ErrorMessage { get; set; }
 }
 
 internal sealed class BaiduTranslateResult
 {
-    [JsonPropertyName("src")] public string Src { get; set; }
+    [JsonPropertyName("src")]
+    public string Src { get; set; }
 
-    [JsonPropertyName("dst")] public string Dst { get; set; }
+    [JsonPropertyName("dst")]
+    public string Dst { get; set; }
 }

@@ -10,13 +10,13 @@ public sealed class HttpCatPlugin : Plugin
 {
     private readonly HttpClient _httpClient = new();
 
-    private readonly HttpCatPluginConfig _config;
+    private readonly HttpCatPluginOptions _options;
 
     private readonly ILogger<HttpCatPlugin> _logger;
 
-    public HttpCatPlugin(HttpCatPluginConfig config, ILogger<HttpCatPlugin> logger)
+    public HttpCatPlugin(HttpCatPluginOptions options, ILogger<HttpCatPlugin> logger)
     {
-        _config = config;
+        _options = options;
         _logger = logger;
     }
 
@@ -29,9 +29,9 @@ public sealed class HttpCatPlugin : Plugin
 
             byte[] image;
 
-            if (_config.EnableCache)
+            if (_options.EnableCache)
             {
-                var path = $"{_config.CachePath}/{code}.jpg";
+                var path = $"{_options.CachePath}/{code}.jpg";
                 if (File.Exists(path))
                 {
                     image = await File.ReadAllBytesAsync(path);
@@ -70,7 +70,7 @@ public sealed class HttpCatPlugin : Plugin
     }
 }
 
-public sealed class HttpCatPluginConfig
+public sealed class HttpCatPluginOptions
 {
     public bool EnableCache { get; set; } = false;
 

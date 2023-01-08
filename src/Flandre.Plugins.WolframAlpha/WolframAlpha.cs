@@ -8,20 +8,20 @@ namespace Flandre.Plugins.WolframAlpha;
 
 public sealed class WolframAlphaPlugin : Plugin
 {
-    private readonly WolframAlphaPluginConfig _config;
+    private readonly WolframAlphaPluginOptions _options;
 
     private readonly ILogger<WolframAlphaPlugin> _logger;
 
-    public WolframAlphaPlugin(WolframAlphaPluginConfig config, ILogger<WolframAlphaPlugin> logger)
+    public WolframAlphaPlugin(WolframAlphaPluginOptions options, ILogger<WolframAlphaPlugin> logger)
     {
-        _config = config;
+        _options = options;
         _logger = logger;
     }
 
     [Command("wa <query:text>")]
     public async Task<MessageContent> OnWolframAlpha(MessageContext _, ParsedArgs args)
     {
-        var client = new WolframAlphaClient(_config.AppId);
+        var client = new WolframAlphaClient(_options.AppId);
 
         var results = await client.FullResultAsync(args.GetArgument<string>("query"));
 
@@ -30,13 +30,13 @@ public sealed class WolframAlphaPlugin : Plugin
         if (!results.Pods.Any())
             return "没有找到相关的内容。";
 
-        var image = await WolframAlphaImageGenerator.Generate(results, _config.FontPath, _logger);
+        var image = await WolframAlphaImageGenerator.Generate(results, _options.FontPath, _logger);
 
         return new MessageBuilder().Image(image);
     }
 }
 
-public sealed class WolframAlphaPluginConfig
+public sealed class WolframAlphaPluginOptions
 {
     public string AppId { get; set; } = string.Empty;
 

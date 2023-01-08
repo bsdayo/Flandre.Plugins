@@ -1,13 +1,21 @@
 ﻿using Flandre.Framework;
+using Microsoft.Extensions.Configuration;
 
 namespace Flandre.Plugins.HttpCat;
 
 public static class HttpCatPluginExtensions
 {
-    public static FlandreAppBuilder UseHttpCatPlugin(this FlandreAppBuilder builder,
-        HttpCatPluginConfig? config = null)
+    public static FlandreAppBuilder AddHttpCatPlugin(this FlandreAppBuilder builder,
+        IConfiguration? configuration)
     {
-        return builder.UsePlugin<HttpCatPlugin, HttpCatPluginConfig>(
-            config ?? new HttpCatPluginConfig());
+        return configuration is null
+            ? builder.AddPlugin<HttpCatPlugin>()
+            : builder.AddPlugin<HttpCatPlugin, HttpCatPluginOptions>(configuration);
+    }
+
+    public static FlandreAppBuilder AddHttpCatPlugin(this FlandreAppBuilder builder,
+        Action<HttpCatPluginOptions> action)
+    {
+        return builder.AddPlugin<HttpCatPlugin, HttpCatPluginOptions>(action);
     }
 }

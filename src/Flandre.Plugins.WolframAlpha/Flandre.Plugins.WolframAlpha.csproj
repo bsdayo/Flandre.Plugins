@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Product>Flandre.Plugins.WolframAlpha</Product>
-        <Title>$(Product)</Title>
-        <PackageVersion>2.2.0</PackageVersion>
+        <Title>Flandre.Plugins.WolframAlpha</Title>
+        <PackageVersion>2.3.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>Wolfram Alpha non-commercial API plugin for Flandre.</Description>
@@ -21,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Flandre.Framework" Version="0.7.1" />
+      <PackageReference Include="Flandre.Framework" Version="0.8.0-alpha.1" />
       <PackageReference Include="Genbox.WolframAlpha" Version="3.0.0-alpha3" />
       <PackageReference Include="SkiaSharp" Version="2.88.3" />
     </ItemGroup>
