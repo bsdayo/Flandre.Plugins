@@ -3,6 +3,7 @@ using Flandre.Core.Messaging.Segments;
 using Flandre.Framework.Attributes;
 using Flandre.Framework.Common;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Flandre.Plugins.HttpCat;
 
@@ -14,9 +15,9 @@ public sealed class HttpCatPlugin : Plugin
 
     private readonly ILogger<HttpCatPlugin> _logger;
 
-    public HttpCatPlugin(HttpCatPluginOptions options, ILogger<HttpCatPlugin> logger)
+    public HttpCatPlugin(IOptionsSnapshot<HttpCatPluginOptions> options, ILogger<HttpCatPlugin> logger)
     {
-        _options = options;
+        _options = options.Value;
         _logger = logger;
     }
 
