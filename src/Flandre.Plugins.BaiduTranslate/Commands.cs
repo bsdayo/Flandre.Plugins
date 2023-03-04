@@ -3,22 +3,21 @@ using System.Text;
 using System.Text.Json;
 using Flandre.Core.Messaging;
 using Flandre.Framework.Attributes;
-using Flandre.Framework.Common;
 using Microsoft.Extensions.Logging;
 
 namespace Flandre.Plugins.BaiduTranslate;
 
 public partial class BaiduTranslatePlugin
 {
-    [Command("trans <text:text>")]
-    [Option("source", "-s [source: string = auto]")]
-    [Option("target", "-t [target: string = zh]")]
-    [Shortcut("翻译")]
-    public async Task<MessageContent> OnTrans(MessageContext ctx, ParsedArgs args)
+    [Command("trans")]
+    [StringShortcut("翻译", AllowArguments = true)]
+    public async Task<MessageContent> OnTrans(string[] textArr,
+        [Option(ShortName = 's')] string sourceOpt = "auto",
+        [Option(ShortName = 't')] string targetOpt = "zh")
     {
-        var text = args.GetArgument<string>("text");
-        var source = BaiduTranslateUtils.GetLangCode(args.GetOption<string>("source"));
-        var target = BaiduTranslateUtils.GetLangCode(args.GetOption<string>("target"));
+        var text = string.Join(' ', textArr);
+        var source = BaiduTranslateUtils.GetLangCode(sourceOpt);
+        var target = BaiduTranslateUtils.GetLangCode(targetOpt);
 
         try
         {

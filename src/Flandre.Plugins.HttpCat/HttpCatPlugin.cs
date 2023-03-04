@@ -15,19 +15,17 @@ public sealed class HttpCatPlugin : Plugin
 
     private readonly ILogger<HttpCatPlugin> _logger;
 
-    public HttpCatPlugin(IOptionsSnapshot<HttpCatPluginOptions> options, ILogger<HttpCatPlugin> logger)
+    public HttpCatPlugin(IOptions<HttpCatPluginOptions> options, ILogger<HttpCatPlugin> logger)
     {
         _options = options.Value;
         _logger = logger;
     }
 
-    [Command("httpcat <code:int>")]
-    public async Task<MessageContent> OnHttpCat(MessageContext _, ParsedArgs args)
+    [Command("httpcat")]
+    public async Task<MessageContent> OnHttpCat(int code)
     {
         try
         {
-            var code = args.GetArgument<int>("code");
-
             byte[] image;
 
             if (_options.EnableCache)

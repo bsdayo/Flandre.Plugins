@@ -19,12 +19,13 @@ public sealed class WolframAlphaPlugin : Plugin
         _logger = logger;
     }
 
-    [Command("wa <query:text>")]
-    public async Task<MessageContent> OnWolframAlpha(MessageContext _, ParsedArgs args)
+    [Command("wa")]
+    public async Task<MessageContent> OnWolframAlpha(string[] query)
     {
         var client = new WolframAlphaClient(_options.AppId);
+        var queryText = string.Join(' ', query);
 
-        var results = await client.FullResultAsync(args.GetArgument<string>("query"));
+        var results = await client.FullResultAsync(queryText);
 
         _logger.LogDebug("Searching Time: {SearchingTime}", results.Timing);
 
