@@ -40,17 +40,6 @@ jobs:
           TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           
-      - name: Publish DeepL
-        id: publish-deepl
-        uses: alirezanet/publish-nuget@v3.0.4
-        with:
-          PROJECT_FILE_PATH: src/Flandre.Plugins.DeepL/Flandre.Plugins.DeepL.csproj
-          PACKAGE_NAME: Flandre.Plugins.DeepL
-          VERSION_FILE_PATH: src/Flandre.Plugins.DeepL/Flandre.Plugins.DeepL.csproj
-          VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
-          TAG_COMMIT: false
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-          
       - name: Publish BaiduTranslate
         id: publish-baidutranslate
         uses: alirezanet/publish-nuget@v3.0.4
