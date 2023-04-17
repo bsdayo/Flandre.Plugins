@@ -20,7 +20,7 @@ public sealed class WolframAlphaPlugin : Plugin
     }
 
     [Command("wa")]
-    public async Task<MessageContent> OnWolframAlpha(string[] query)
+    public async Task<MessageContent> OnWolframAlpha(params string[] query)
     {
         var client = new WolframAlphaClient(_options.AppId);
         var queryText = string.Join(' ', query);

@@ -8,7 +8,7 @@
 
 ### 插件列表
 
-- DeepL - 文本翻译，由 DeepL 提供支持 
+- [BaiduTranslate](src/Flandre.Plugins.BaiduTranslate/README.md) - 百度翻译
 - [HttpCat](src/Flandre.Plugins.HttpCat/README.md) - [http.cat](https://github.com/httpcats/http.cat/) 图片获取
 - [WolframAlpha](src/Flandre.Plugins.WolframAlpha/README.md) - Wolfram Alpha 非商业 API 封装
 

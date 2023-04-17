@@ -11,13 +11,14 @@ public partial class BaiduTranslatePlugin
 {
     [Command("trans")]
     [StringShortcut("翻译", AllowArguments = true)]
-    public async Task<MessageContent> OnTrans(string[] textArr,
-        [Option(ShortName = 's')] string sourceOpt = "auto",
-        [Option(ShortName = 't')] string targetOpt = "zh")
+    public async Task<MessageContent> OnTrans(
+        [Option(ShortName = 's')] string source = "auto",
+        [Option(ShortName = 't')] string target = "zh",
+        params string[] text)
     {
-        var text = string.Join(' ', textArr);
-        var source = BaiduTranslateUtils.GetLangCode(sourceOpt);
-        var target = BaiduTranslateUtils.GetLangCode(targetOpt);
+        var textToTranslate = string.Join(' ', text);
+        var sourceLang = BaiduTranslateUtils.GetLangCode(source);
+        var targetLang = BaiduTranslateUtils.GetLangCode(target);
 
         try
         {
@@ -27,15 +28,15 @@ public partial class BaiduTranslatePlugin
                 .PadLeft(10, '0');
             var sign = BitConverter.ToString(
                     MD5.Create().ComputeHash(Encoding.Default.GetBytes(
-                        _options.AppId + text + salt + _options.Token)))
+                        _options.AppId + textToTranslate + salt + _options.Token)))
                 .Replace("-", "")
                 .ToLower();
 
             var client = new HttpClient();
             var query = new StringBuilder()
-                .Append($"?q={text}")
-                .Append($"&from={source}")
-                .Append($"&to={target}")
+                .Append($"?q={textToTranslate}")
+                .Append($"&from={sourceLang}")
+                .Append($"&to={targetLang}")
                 .Append($"&appid={_options.AppId}")
                 .Append($"&salt={salt}")
                 .Append($"&sign={sign}")
