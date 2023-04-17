@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <Title>Flandre.Plugins.HttpCat</Title>
-        <PackageVersion>2.2.0</PackageVersion>
+        <PackageVersion>2.3.0</PackageVersion>
         <Version>$(PackageVersion)</Version>
         <Authors>b1acksoil</Authors>
         <Description>HttpCat plugin for Flandre.</Description>
@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Flandre.Framework" Version="1.0.0-alpha.7" />
+      <PackageReference Include="Flandre.Framework" Version="1.0.0-rc.6" />
     </ItemGroup>
 
 </Project>

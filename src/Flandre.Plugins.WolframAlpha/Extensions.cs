@@ -5,17 +5,17 @@ namespace Flandre.Plugins.WolframAlpha;
 
 public static class WolframAlphaPluginExtensions
 {
-    public static FlandreAppBuilder AddWolframAlphaPlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddWolframAlpha(this IPluginCollection plugins,
         IConfiguration? configuration)
     {
         return configuration is null
-            ? builder.AddPlugin<WolframAlphaPlugin>()
-            : builder.AddPlugin<WolframAlphaPlugin, WolframAlphaPluginOptions>(configuration);
+            ? plugins.Add<WolframAlphaPlugin>()
+            : plugins.Add<WolframAlphaPlugin, WolframAlphaPluginOptions>(configuration);
     }
 
-    public static FlandreAppBuilder AddWolframAlphaPlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddWolframAlpha(this IPluginCollection plugins,
         Action<WolframAlphaPluginOptions> action)
     {
-        return builder.AddPlugin<WolframAlphaPlugin, WolframAlphaPluginOptions>(action);
+        return plugins.Add<WolframAlphaPlugin, WolframAlphaPluginOptions>(action);
     }
 }

@@ -5,17 +5,17 @@ namespace Flandre.Plugins.HttpCat;
 
 public static class HttpCatPluginExtensions
 {
-    public static FlandreAppBuilder AddHttpCatPlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddHttpCat(this IPluginCollection plugins,
         IConfiguration? configuration)
     {
         return configuration is null
-            ? builder.AddPlugin<HttpCatPlugin>()
-            : builder.AddPlugin<HttpCatPlugin, HttpCatPluginOptions>(configuration);
+            ? plugins.Add<HttpCatPlugin>()
+            : plugins.Add<HttpCatPlugin, HttpCatPluginOptions>(configuration);
     }
 
-    public static FlandreAppBuilder AddHttpCatPlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddHttpCat(this IPluginCollection plugins,
         Action<HttpCatPluginOptions> action)
     {
-        return builder.AddPlugin<HttpCatPlugin, HttpCatPluginOptions>(action);
+        return plugins.Add<HttpCatPlugin, HttpCatPluginOptions>(action);
     }
 }

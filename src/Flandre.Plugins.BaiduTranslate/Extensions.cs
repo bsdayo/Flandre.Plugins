@@ -5,17 +5,17 @@ namespace Flandre.Plugins.BaiduTranslate;
 
 public static class BaiduTranslatePluginExtensions
 {
-    public static FlandreAppBuilder AddBaiduTranslatePlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddBaiduTranslate(this IPluginCollection plugins,
         IConfiguration? configuration)
     {
         return configuration is null
-            ? builder.AddPlugin<BaiduTranslatePlugin>()
-            : builder.AddPlugin<BaiduTranslatePlugin, BaiduTranslatePluginOptions>(configuration);
+            ? plugins.Add<BaiduTranslatePlugin>()
+            : plugins.Add<BaiduTranslatePlugin, BaiduTranslatePluginOptions>(configuration);
     }
 
-    public static FlandreAppBuilder AddBaiduTranslatePlugin(this FlandreAppBuilder builder,
+    public static IPluginCollection AddBaiduTranslate(this IPluginCollection plugins,
         Action<BaiduTranslatePluginOptions> action)
     {
-        return builder.AddPlugin<BaiduTranslatePlugin, BaiduTranslatePluginOptions>(action);
+        return plugins.Add<BaiduTranslatePlugin, BaiduTranslatePluginOptions>(action);
     }
 }
